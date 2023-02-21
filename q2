@@ -1,0 +1,52 @@
+2)
+link: https://www.hackerrank.com/contests/cse310-week5-day2-seee/challenges/week5-day1-question2/problem
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Circle
+{
+    double r;
+    Circle(double radius)
+    {
+        this.r=radius;
+    }
+    double getArea()
+    {
+        return 3.14*r*r;
+    }
+}
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+        double r;
+        if(n>=1)
+        {
+            Circle[] c = new Circle[n];
+            for(int i=0;i<n;i++)
+            {
+                r=input.nextDouble();
+                r = Math.max(0.0, r);
+                c[i] = new Circle(r);
+            }
+            for(int i = 0; i < n; i++) 
+            {
+                double area=c[i].getArea();
+                if (area > 30.0) 
+                {
+                    String s = String.format("%.4f", area);
+                    System.out.println(s);
+                }
+            }
+        }
+        else
+        {
+            System.out.println("Invalid input");
+        }
+    }
+}
